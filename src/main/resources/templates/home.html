@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <style>
+        /* Style global de la page */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e0f2fe; /* bleu clair */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteneur central */
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        /* Titre principal */
+        h2 {
+            color: #2563eb; /* bleu vif */
+            margin-bottom: 15px;
+        }
+
+        /* Texte descriptif */
+        p {
+            color: #4b5563; /* gris foncé */
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Liste des liens */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: #10b981; /* vert */
+            color: white;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: #059669;
+        }
+
+        /* Bouton de déconnexion */
+        button {
+            padding: 12px 24px;
+            background: #ef4444; /* rouge */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Bienvenue dans l’application</h2>
+    <p>Authentification réussie. Sélectionnez l’espace que vous souhaitez ouvrir :</p>
+
+    <ul>
+        <li><a th:href="@{/user/dashboard}">Ouvrir l’espace utilisateur</a></li>
+        <li><a th:href="@{/admin/dashboard}">Ouvrir l’espace administrateur</a></li>
+    </ul>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Se déconnecter</button>
+    </form>
+</div>
+</body>
+</html>

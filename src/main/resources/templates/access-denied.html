@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accès refusé</title>
+    <style>
+        /* Style global de la page */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f4f6; /* fond clair gris */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteneur central */
+        .container {
+            max-width: 480px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Titre principal */
+        h1 {
+            font-size: 2rem;
+            color: #dc2626; /* rouge danger */
+            margin-bottom: 15px;
+        }
+
+        /* Texte descriptif */
+        p {
+            color: #4b5563; /* gris foncé */
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Bouton retour */
+        .btn-home {
+            display: inline-block;
+            background: #10b981; /* vert teal */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background: #059669;
+        }
+
+        /* Icône décorative */
+        .icon {
+            font-size: 4rem;
+            color: #f87171;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Icône warning -->
+    <div class="icon">⚠️</div>
+
+    <!-- Titre -->
+    <h1>Accès refusé</h1>
+
+    <!-- Message descriptif -->
+    <p>Oups ! Vous n’avez pas la permission d’accéder à cette page. Veuillez retourner à votre espace utilisateur.</p>
+
+    <!-- Bouton retour à l'accueil -->
+    <a class="btn-home" th:href="@{/home}">Retour à l’accueil</a>
+</div>
+</body>
+</html>
